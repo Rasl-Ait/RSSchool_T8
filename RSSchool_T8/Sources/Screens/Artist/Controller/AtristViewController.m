@@ -82,6 +82,7 @@
 - (void)setupColorsVC {
 	_paletteController = [[PaletteViewController alloc] init];
 	_paletteController.view.translatesAutoresizingMaskIntoConstraints = false;
+  
 	__weak typeof(self) weakSelf = self;
 	[_paletteController setDidSaveButton:^{
 		[weakSelf removeColorsVC];

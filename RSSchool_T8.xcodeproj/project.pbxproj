@@ -158,12 +158,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DCA8BDF026A32DB500B68829 /* Colors */ = {
+		DCA8BDF026A32DB500B68829 /* Palette */ = {
 			isa = PBXGroup;
 			children = (
 				DCA8BDF426A32DD300B68829 /* Controller */,
 			);
-			path = Colors;
+			path = Palette;
 			sourceTree = "<group>";
 		};
 		DCA8BDF426A32DD300B68829 /* Controller */ = {
@@ -237,7 +237,7 @@
 			children = (
 				DCE6E19A26A42F5600DCBFC0 /* Timer */,
 				DCE6E19526A42A8100DCBFC0 /* Drawings */,
-				DCA8BDF026A32DB500B68829 /* Colors */,
+				DCA8BDF026A32DB500B68829 /* Palette */,
 				DCA59ACC26A2D57B000E70E0 /* Artist */,
 			);
 			path = Screens;

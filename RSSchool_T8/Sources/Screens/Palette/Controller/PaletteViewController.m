@@ -28,10 +28,10 @@ int selectedIndex = -1;
   self.view.backgroundColor = UIColor.clearColor;
   _models = [[NSMutableArray<ColorsModel *> alloc] init];
 
-  [self fetch];
+ 
   _selectIndexs = [[NSMutableArray alloc] init];
-
-  
+  [self fetch];
+ 
   [self setupButton];
   [self setupSecureView];
  
@@ -127,6 +127,7 @@ int selectedIndex = -1;
 
 #pragma mark Action
 - (void)saveButtonTapped:(UIButton *)sender {
+  selectedIndex = -1;
   self.didSaveButton();
 }
 
@@ -135,7 +136,7 @@ int selectedIndex = -1;
 - (void)didViewTapped:(UITapGestureRecognizer *)sender {
   NSInteger index = sender.view.tag;
   
-  //NSLog(_drawViews[index].layerState ? @"YES" : @"NO");
+  NSLog(@"%d", selectedIndex);
   
   if (_drawViews[index].layerState == false) {
     [_selectIndexs addObject:@(index)];

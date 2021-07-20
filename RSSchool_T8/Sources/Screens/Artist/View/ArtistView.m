@@ -182,14 +182,22 @@
 				[self updateState:draw];
 				break;
 			case 4:
-				[_drawView.shapeLayer removeFromSuperlayer];
-				[_drawView setNeedsDisplay];
-				[self updateState:idle];
-				break;
-				
-			default:
-				break;
-		}
+        
+        [UIView transitionWithView:_drawView
+                          duration:0.8
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+          [self->_drawView.shapeLayer removeFromSuperlayer];
+          [self->_drawView setNeedsDisplay];
+          
+        }
+                        completion:nil];
+        
+ 
+        [self updateState:idle];
+        break;
+        
+    }
 }
 
 @end
