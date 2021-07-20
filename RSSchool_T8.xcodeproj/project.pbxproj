@@ -114,8 +114,8 @@
 			children = (
 				DCE6E19226A4055C00DCBFC0 /* PaletteDrawView.h */,
 				DCE6E19326A4055C00DCBFC0 /* PaletteDrawView.m */,
-				DCA8BDDC26A300AC00B68829 /* DrawView.m */,
 				DCA8BDDB26A300AC00B68829 /* DrawView.h */,
+				DCA8BDDC26A300AC00B68829 /* DrawView.m */,
 				DCA8BDD726A2FCAF00B68829 /* Button */,
 			);
 			path = "Custom views";
