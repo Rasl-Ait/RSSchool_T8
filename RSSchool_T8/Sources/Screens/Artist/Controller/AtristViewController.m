@@ -85,8 +85,13 @@
   
 	__weak typeof(self) weakSelf = self;
 	[_paletteController setDidSaveButton:^{
-		[weakSelf removeColorsVC];
-		[weakSelf onConstaintHightAnimate:0];
+    [weakSelf onConstaintHightAnimate:0];
+		
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [weakSelf removeColorsVC];
+    });
+		
 	}];
 
 	[_paletteController setDidSelectButton:^(UIColor * _Nonnull color) {
@@ -157,7 +162,7 @@
 
 - (void)onConstaintHightAnimate:(CGFloat)height {
 	[self.heightConstraint setConstant:height];
-	[UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+	[UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 		[self.view layoutIfNeeded];
 	} completion:^(BOOL finished) {
 
@@ -196,8 +201,11 @@
 
 #pragma mark TimerViewControllerDelegate
 - (void)didSaveButton {
-	[self removeTimerVC];
+	
 	[self onConstaintHightAnimate:0];
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self removeTimerVC];
+  });
 
 }
 
