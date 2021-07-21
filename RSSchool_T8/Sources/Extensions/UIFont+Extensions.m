@@ -10,12 +10,12 @@
 @implementation UIFont (Extensions)
 
 + (UIFont *)montserratRegular:(CGFloat)size {
-	return [UIFont fontWithName:@"Montserrat Regular"
+	return [UIFont fontWithName:@"Montserrat-Regular"
 												 size: size];;
 }
 
 + (UIFont *)montserratMedium:(CGFloat)size {
-	return [UIFont fontWithName:@"Montserrat Medium"
+	return [UIFont fontWithName:@"Montserrat-Medium"
 												 size: size];;
 }
 
